@@ -1,0 +1,5 @@
+"column name",width,datatype
+name,10,BLOB
+phone,12,TEXT
+score,5,INTEGER
+address,50,TEXT

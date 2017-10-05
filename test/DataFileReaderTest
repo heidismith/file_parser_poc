@@ -1,0 +1,46 @@
+import org.junit.Test;
+
+import java.util.HashMap;
+import java.util.Map;
+import static org.junit.Assert.*;
+
+/**
+ * Test the ability to read the file 
+ *
+ * Created by IntelliJ IDEA.
+ * User: Heidi
+ * Date: 8/10/17
+ */
+public class StringFileReaderTest {
+    @Test
+    public void testReadStringsAndCountDuplicatesBadFile() throws Exception {
+
+        // Test bad filename
+        StringFileReader badFileReader = new StringFileReader("noname");
+        Map stringCounts = new HashMap<String, Integer>();
+        boolean exceptionCaught = false;
+        try {
+            stringCounts = badFileReader.readStringsAndCountDuplicates();
+        } catch (FileReaderException ex) {
+            exceptionCaught = true;
+            assertTrue("Caught the wrong exception.  Was: " + ex.getMessage(),
+                    ex.getMessage().contains("could not read the file"));
+        }
+        assertTrue("Did get the exception!", exceptionCaught);
+        assertTrue("Did not return a map", stringCounts.isEmpty());
+    }
+    @Test
+    public void testReadStringsAndCountDuplicatesGoodFile() throws Exception {
+        // Test known file
+        StringFileReader goodFileReader = new StringFileReader("ips.txt");
+        Map stringCounts = new HashMap<String, Integer>();
+        try {
+            stringCounts = goodFileReader.readStringsAndCountDuplicates();
+        } catch (FileReaderException ex) {
+            fail("Test should not have had an exception");
+        }
+        assert (!stringCounts.isEmpty());
+        assertEquals("File contents grouped into the correct number of map entries", 10024, stringCounts.size());
+
+    }
+}
