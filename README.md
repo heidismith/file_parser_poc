@@ -30,11 +30,12 @@ This is a proof of concept of the system described in: [File_Parser](https://gis
 
 
 ## Database:
-I chose to use an embedded H2 database to make the POC easy to run from anywhere.  In a production application, I would not use H2.
-I would use a more robust DB: MySQL or Postgres most likely. I would also add:
-    - Connection pooling
-    - Separate environment variables for separate databases for testing, stage, production environments.
-    - More robust upper/lowercase name management for the tables and column names
+
+	I chose to use an embedded H2 database to make the POC easy to run from anywhere.  In a production application, I would not use H2.
+	I would use a more robust DB: MySQL or Postgres most likely. I would also add:
+	    - Connection pooling
+	    - Separate environment variables for separate databases for testing, stage, production environments.
+	    - More robust upper/lowercase name management for the tables and column names
 
 
 ## Assumptions:
