@@ -1,9 +1,9 @@
 # file_parser_poc
 Introductory file parser given specific file definitions
+This is a proof of concept of the system described in: [File_Parser](https://gist.github.com/dmshann0n/6dfba5ebdebe1098d579)
 
 ## General:
 
-    This is a proof of concept of the system described in: https://gist.github.com/dmshann0n/6dfba5ebdebe1098d579
 
     It is written in Java.  I used minimal libraries as I assumed it is a coding exercise where you would 
     rather see my code than my knowledge of Java libraries.
@@ -30,8 +30,7 @@ Introductory file parser given specific file definitions
 
 
 ## Database:
-I chose to use an embedded H2 database to make the POC easy to run from anywhere.  
-In a production application, I would not use H2.
+I chose to use an embedded H2 database to make the POC easy to run from anywhere.  In a production application, I would not use H2.
 I would use a more robust DB: MySQL or Postgres most likely. I would also add:
     - Connection pooling
     - Separate environment variables for separate databases for testing, stage, production environments.
